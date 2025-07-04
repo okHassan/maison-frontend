@@ -23,7 +23,7 @@ import store from "./redux/store";
 import PurchaseCancelPage from "./pages/PurchaseCancelPage";
 import CreateProductPage from "./Components/Admin/CreateProduct";
 import Cart from "./pages/Cart";
-import Order from "./pages/order";
+import Order from "./pages/Order";
 import UDE from "./pages/UDE";
 
 function App() {
