@@ -13,19 +13,21 @@ const saveCartToLocalStorage = (cart) => {
 }
 
 // Async Thunks for fetching cart for user or guest
-export const fetchCart = createAsyncThunk("cart/fetchCart", async ({ userId, guestId }, { rejectWithValue }) => {
-    try {
-        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/cart`,
-            {
+export const fetchCart = createAsyncThunk(
+    "cart/fetchCart",
+    async ({ userId, guestId }, { rejectWithValue }) => {
+        try {
+            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/cart`, {
                 params: { userId, guestId }
-            }
-        );
-        return response.data;
-    } catch (error) {
-        console.error("Error fetching cart:", error);
-        rejectWithValue(error.response.data)
+            });
+            return response.data;
+        } catch (error) {
+            console.error("Error fetching cart:", error);
+            return rejectWithValue(error?.response?.data || "Unknown error");
+        }
     }
-})
+);
+
 
 // Async Thunks for adding product to cart
 export const addToCart = createAsyncThunk("cart/addToCart", async ({ productId, quantity, size, color, guestId, userId }, { rejectWithValue }) => {
