@@ -4,7 +4,7 @@ const Pics = () => {
     return (
         <div className='bg-white w-full '>
             <div className='container mx-auto py-16'>
-                <div className='flex gap-5'>
+                <div className='flex gap-5 flex-wrap md:flex-nowrap'>
                     <img src='/pics/saree.jpg' alt='saree' className='w-[450px] h-[550px]' />
                     <img src='/pics/kurtis.jpg' alt='kurti' className='w-[450px] h-[550px]' />
                     <img src='/pics/lehnga.jpg' alt='lahnga' className='w-[450px] h-[550px]' />
